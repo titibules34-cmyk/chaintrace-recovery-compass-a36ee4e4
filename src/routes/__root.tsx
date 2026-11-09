@@ -303,6 +303,12 @@ function FloatingCJBot() {
     "Enquiry summary:",lead.summary,"","Sent via the CJ Bot website assistant."
   ].join("\n");
   const mailHref="mailto:info@cyberjustice.uk?subject="+encodeURIComponent("Website enquiry — Cyber Justice")+"&body="+encodeURIComponent(mailBody);
+  const resetChat=()=>{
+    setStage("welcome");setLead(emptyCJLead);setMailReady(false);setDraft("");
+    setMessages([{from:"bot",text:"Welcome back. I'm CJ Bot, your website assistant. What would you like help with?"}]);
+    setChoices(["Cryptocurrency scam","Investment fraud","Wallet or account theft","Lost access to digital assets","Transaction tracing","Speak to the recovery team"]);
+  };
+
   const inputCls="w-full rounded-xl border border-cyan-200/15 bg-white/[.05] px-3.5 py-3 text-sm text-blue-50 outline-none transition placeholder:text-blue-200/40 focus:border-cyan-300/50 focus:bg-white/[.08] focus:ring-2 focus:ring-cyan-300/15";
   return (
     <aside className="fixed bottom-2 right-2 z-[70] flex flex-col items-end gap-2 sm:bottom-4 sm:right-4 sm:gap-3">
@@ -313,6 +319,7 @@ function FloatingCJBot() {
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent"/>
             <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-cyan-200/25 bg-gradient-to-br from-cyan-400/25 to-blue-600/30 text-xl shadow-[0_0_24px_rgba(34,211,238,.25)] sm:h-12 sm:w-12 sm:text-2xl" aria-hidden="true">⚖️<span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-[#0a2a63] bg-emerald-400"/></div>
             <div className="relative min-w-0 flex-1"><p className="text-base font-extrabold leading-tight tracking-tight text-white">CJ Bot</p><p className="mt-0.5 flex items-center gap-1.5 text-[0.68rem] text-cyan-100/75 sm:text-xs"><span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400"/> Cyber Justice · Website assistant</p></div>
+            <button type="button" onClick={resetChat} aria-label="Restart chat" title="Restart chat" className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[.07] text-base text-cyan-200 transition hover:-rotate-180 hover:bg-white/15">↻</button>
             <button type="button" onClick={()=>setIsOpen(false)} aria-label="Close CJ Bot" className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[.07] text-xl text-blue-100 transition hover:rotate-90 hover:bg-white/15">×</button>
           </header>
           <div className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain bg-[radial-gradient(ellipse_at_top_right,rgba(34,211,238,.08),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(37,99,235,.12),transparent_60%)] px-3 py-4 sm:space-y-4 sm:px-4 sm:py-5">

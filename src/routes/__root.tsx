@@ -149,7 +149,7 @@ function FloatingClientReviews() {
         aria-expanded={isOpen}
         aria-controls="floating-client-review-panel"
         onClick={() => setIsOpen((open) => !open)}
-        className="inline-flex max-w-full items-center gap-1 rounded-full border border-blue-200/20 bg-white/[.075] px-2.5 py-2 text-[0.62rem] font-bold text-blue-50 shadow-xl shadow-black/30 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent sm:gap-2 sm:px-4 sm:py-3 sm:text-xs"
+        className="inline-flex max-w-full items-center gap-1 rounded-full border border-blue-200/20 bg-white/[.04] px-2.5 py-2 text-[0.62rem] font-bold text-blue-50 shadow-lg shadow-black/10 backdrop-blur-[2px] transition hover:-translate-y-0.5 hover:border-accent sm:gap-2 sm:px-4 sm:py-3 sm:text-xs"
       >
         <span className="text-accent" aria-hidden="true">★★★★★</span>
         <span className="sm:hidden">Reviews</span><span className="hidden sm:inline">Client reviews</span>
@@ -159,16 +159,16 @@ function FloatingClientReviews() {
         <section
           id="floating-client-review-panel"
           aria-live="polite"
-          className="mb-1 max-h-[42dvh] w-[43vw] max-w-[11rem] overflow-y-auto rounded-xl border border-blue-200/20 bg-white/[.075] p-2.5 text-blue-50 shadow-2xl shadow-black/40 backdrop-blur-xl sm:mb-0 sm:w-full sm:max-w-none sm:max-h-none sm:rounded-2xl sm:p-5"
+          className="mb-1 max-h-[42dvh] w-[43vw] max-w-[11rem] overflow-y-auto rounded-xl border border-cyan-200/25 bg-gradient-to-br from-cyan-300/[.07] via-white/[.02] to-blue-400/[.05] p-2.5 text-blue-50 shadow-[0_18px_60px_rgba(0,0,0,.12)] ring-1 ring-inset ring-white/5 backdrop-blur-[2px] sm:mb-0 sm:w-full sm:max-w-none sm:max-h-none sm:rounded-2xl sm:p-5"
         >
           <div className="mb-2 flex items-center justify-between gap-2 sm:mb-3 sm:gap-3">
             <div className="min-w-0">
-              <p className="text-xs font-bold text-white sm:text-sm">{review.name}</p>
-              <p className="mt-1 text-[0.65rem] uppercase tracking-[0.16em] text-muted-foreground">Client review</p>
+              <p className="text-xs font-bold text-cyan-100 [text-shadow:0_1px_6px_rgba(2,6,23,.8)] sm:text-sm">{review.name}</p>
+              <p className="mt-1 text-[0.65rem] uppercase tracking-[0.16em] text-cyan-300/80">Client review</p>
             </div>
             <span className="shrink-0 text-xs tracking-[0.12em] text-accent sm:text-sm" aria-label="Five out of five stars">★★★★★</span>
           </div>
-          <p key={activeReview} className="client-in min-h-0 text-xs leading-relaxed text-blue-50/90 sm:min-h-32 sm:text-sm">“{review.text}”</p>
+          <p key={activeReview} className="client-in min-h-0 text-xs leading-relaxed text-blue-50 [text-shadow:0_1px_8px_rgba(2,6,23,.85)] sm:min-h-32 sm:text-sm">“{review.text}”</p>
           <div className="mt-2 flex justify-end border-t border-blue-100/15 pt-2 sm:mt-4 sm:pt-3">
             <div className="flex items-center gap-2">
               <button type="button" onClick={showPrevious} aria-label="Previous client review" className="flex h-8 w-8 items-center justify-center rounded-full border border-blue-200/20 bg-white/[.06] text-lg text-cyan-200 transition hover:border-cyan-300/50">‹</button>

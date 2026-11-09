@@ -155,7 +155,7 @@ function FloatingClientReviews() {
         <span className="sm:hidden">Reviews</span><span className="hidden sm:inline">Client reviews</span>
         <span className="text-accent" aria-hidden="true">{isOpen ? "−" : "+"}</span>
       </button>
-      {isOpen && (
+      {isOpen && review && (
         <section
           id="floating-client-review-panel"
           aria-live="polite"

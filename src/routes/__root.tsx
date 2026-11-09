@@ -149,7 +149,7 @@ function FloatingClientReviews() {
         aria-expanded={isOpen}
         aria-controls="floating-client-review-panel"
         onClick={() => setIsOpen((open) => !open)}
-        className="inline-flex max-w-full items-center gap-1 rounded-full border border-blue-200/20 bg-white/[.04] px-2.5 py-2 text-[0.62rem] font-bold text-blue-50 shadow-lg shadow-black/10 backdrop-blur-[2px] transition hover:-translate-y-0.5 hover:border-accent sm:gap-2 sm:px-4 sm:py-3 sm:text-xs"
+        className="inline-flex max-w-full items-center gap-1 rounded-full border border-blue-200/20 bg-white/[.04] px-2.5 py-2 text-[0.62rem] font-bold text-blue-50 shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:border-accent sm:gap-2 sm:px-4 sm:py-3 sm:text-xs"
       >
         <span className="text-accent" aria-hidden="true">★★★★★</span>
         <span className="sm:hidden">Reviews</span><span className="hidden sm:inline">Client reviews</span>
@@ -159,7 +159,7 @@ function FloatingClientReviews() {
         <section
           id="floating-client-review-panel"
           aria-live="polite"
-          className="mb-1 max-h-[42dvh] w-[43vw] max-w-[11rem] overflow-y-auto rounded-xl border border-cyan-200/25 bg-gradient-to-br from-cyan-300/[.07] via-white/[.02] to-blue-400/[.05] p-2.5 text-blue-50 shadow-[0_18px_60px_rgba(0,0,0,.12)] ring-1 ring-inset ring-white/5 backdrop-blur-[2px] sm:mb-0 sm:w-full sm:max-w-none sm:max-h-none sm:rounded-2xl sm:p-5"
+          className="mb-1 max-h-[42dvh] w-[43vw] max-w-[11rem] overflow-y-auto rounded-xl border border-cyan-200/25 bg-gradient-to-br from-cyan-300/[.07] via-white/[.02] to-blue-400/[.05] p-2.5 text-blue-50 shadow-[0_18px_60px_rgba(0,0,0,.12)] ring-1 ring-inset ring-white/5 sm:mb-0 sm:w-full sm:max-w-none sm:max-h-none sm:rounded-2xl sm:p-5"
         >
           <div className="mb-2 flex items-center justify-between gap-2 sm:mb-3 sm:gap-3">
             <div className="min-w-0">

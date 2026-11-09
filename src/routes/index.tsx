@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const WORDS = ["digital", "tracing", "intelligence", "recovery"];
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { HeroPicture } from "@/components/HeroPicture";
 import { Globe, Users, Monitor, DollarSign, Code2, BarChart3, MapPin, Lock, ShieldCheck, ArrowRight, Phone, Clock, Send, ChevronDown, Menu, X } from "lucide-react";
@@ -203,13 +202,8 @@ const contactCards = [
 ];
 
 function Index() {
-  const [word, setWord] = useState(0);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  useEffect(() => {
-    const t = setInterval(() => setWord((w) => (w + 1) % WORDS.length), 2200);
-    return () => clearInterval(t);
-  }, []);
 
   return (
     <main className="min-h-screen">
@@ -384,7 +378,7 @@ function Index() {
           <p className="eyebrow">Recovery forensics & investigations</p>
           <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-tight sm:text-6xl">
             Actionable{" "}
-            <span key={word} className="word-swap inline-block text-accent">{WORDS[word]}</span>
+            <span className="inline-block text-accent">digital</span>
             <br />
             solutions.
           </h1>

@@ -357,3 +357,8 @@
   }
 }
 
+
+@keyframes cjbot-pop { from { opacity: 0; transform: translateY(12px) scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes cjbot-msg { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.cjbot-pop { animation: cjbot-pop .28s cubic-bezier(.2,.8,.2,1) both; transform-origin: bottom right; }
+.cjbot-msg { animation: cjbot-msg .3s ease-out both; }

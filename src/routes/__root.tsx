@@ -303,12 +303,6 @@ function FloatingCJBot() {
     "Enquiry summary:",lead.summary,"","Sent via the CJ Bot website assistant."
   ].join("\n");
   const mailHref="mailto:info@cyberjustice.uk?subject="+encodeURIComponent("Website enquiry — Cyber Justice")+"&body="+encodeURIComponent(mailBody);
-  const resetChat=()=>{
-    setStage("welcome");setLead(emptyCJLead);setMailReady(false);setDraft("");
-    setMessages([{from:"bot",text:"Welcome back. I'm CJ Bot, your website assistant. What would you like help with?"}]);
-    setChoices(["Cryptocurrency scam","Investment fraud","Wallet or account theft","Lost access to digital assets","Transaction tracing","Speak to the recovery team"]);
-  };
-
   const inputCls="w-full rounded-xl border border-cyan-200/15 bg-white/[.05] px-3.5 py-3 text-sm text-blue-50 outline-none transition placeholder:text-blue-200/40 focus:border-cyan-300/50 focus:bg-white/[.08] focus:ring-2 focus:ring-cyan-300/15";
   return (
     <aside className="fixed bottom-2 right-2 z-[70] flex flex-col items-end gap-2 sm:bottom-4 sm:right-4 sm:gap-3">
@@ -346,9 +340,7 @@ function FloatingCJBot() {
               <input value={draft} onChange={event=>setDraft(event.target.value)} placeholder={stage==="name"?"Enter your full name...":stage==="email"?"Enter your email address...":stage==="phone"?"Phone number or type skip...":stage==="summary"?"Write a short case summary...":"Type your message..."} aria-label="Type your message to CJ Bot" className="min-w-0 flex-1 bg-transparent py-2 text-sm text-blue-50 outline-none placeholder:text-blue-200/40"/>
               <button type="submit" aria-label="Send message" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 text-sm font-bold text-white shadow-[0_0_18px_rgba(34,211,238,.35)] transition hover:scale-105 sm:h-10 sm:w-10">➤</button>
             </div>
-            <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-[0.6rem] leading-tight text-blue-200/50 sm:text-[0.66rem]"><span aria-hidden="true">🔒</span> Never share passwords, private keys, recovery phrases or one-time codes.</p>
           </form>}
-          <div className="flex shrink-0 items-center justify-between border-t border-cyan-200/10 bg-[#040b1c] px-4 py-2"><span className="text-[0.65rem] text-blue-200/45">Need a fresh start?</span><button type="button" onClick={resetChat} className="text-xs font-semibold text-cyan-300 transition hover:text-cyan-100">Restart chat</button></div>
         </section>
       )}
       <button type="button" aria-expanded={isOpen} aria-label={isOpen?"Close CJ Bot chat":"Chat with CJ Bot"} onClick={()=>setIsOpen(open=>!open)} className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-cyan-200/25 bg-[#071a3d]/80 text-lg shadow-[0_10px_30px_-8px_rgba(0,10,40,.7),0_0_20px_rgba(34,211,238,.18)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-cyan-300/50 hover:shadow-[0_10px_30px_-8px_rgba(0,10,40,.7),0_0_28px_rgba(34,211,238,.35)] focus:outline-none focus:ring-2 focus:ring-cyan-300 sm:h-14 sm:w-14 sm:text-xl">

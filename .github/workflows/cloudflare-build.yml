@@ -1,0 +1,28 @@
+name: Cloudflare deployment build check
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "package.json"
+      - "bun.lock"
+      - "vite.config.ts"
+      - "wrangler.jsonc"
+      - "src/**"
+  push:
+    branches: [cloudflare-deployment]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.4.4"
+      - name: Install dependencies
+        run: bun install
+      - name: Build application
+        run: bun run build

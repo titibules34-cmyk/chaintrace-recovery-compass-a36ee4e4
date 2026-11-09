@@ -20,7 +20,7 @@ import certDuns from "@/assets/certs/duns.png";
 import certDmca from "@/assets/certs/dmca.png";
 import certAcfeMember from "@/assets/certs/acfe-member.png";
 import certAuthorizeNet from "@/assets/certs/authorize-net.png";
-import worldMapBg from "@/assets/world-map-blue.png.asset.json";
+const worldMapBg = "/assets/cyber-justice-hero.webp";
 
 const certifications: [string, string][] = [
   [certAcfeCfe, "Certified Fraud Examiner"],
@@ -112,7 +112,7 @@ function AboutUs() {
         @media (prefers-reduced-motion: reduce) { .about-rise,.about-orb,.about-float { animation:none; opacity:1; } .about-word { animation:none; opacity:0; } .about-word:first-child { opacity:1; } }
       `}</style>
       <div className="pointer-events-none fixed inset-0 -z-10">
-        <img src={worldMapBg.url} alt="" aria-hidden="true" className="h-full w-full object-cover" />
+        <img src={worldMapBg} alt="" aria-hidden="true" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,22,52,.62)_0%,rgba(8,28,64,.72)_55%,rgba(6,20,48,.82)_100%)]" />
       </div>
       <div className="about-grid pointer-events-none absolute inset-0 -z-10" />

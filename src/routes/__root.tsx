@@ -351,9 +351,12 @@ function FloatingCJBot() {
           <div className="flex shrink-0 items-center justify-between border-t border-cyan-200/10 bg-[#040b1c] px-4 py-2"><span className="text-[0.65rem] text-blue-200/45">Need a fresh start?</span><button type="button" onClick={resetChat} className="text-xs font-semibold text-cyan-300 transition hover:text-cyan-100">Restart chat</button></div>
         </section>
       )}
-      <button type="button" aria-expanded={isOpen} onClick={()=>setIsOpen(open=>!open)} className="group relative flex items-center gap-2 rounded-full border border-cyan-200/30 bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 py-1.5 pl-1.5 pr-3.5 text-xs font-bold text-white shadow-[0_12px_40px_-10px_rgba(34,211,238,.55)] transition hover:-translate-y-0.5 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-cyan-300 sm:gap-2.5 sm:pr-5 sm:text-sm">
-        {!isOpen&&<span className="pointer-events-none absolute inset-0 animate-ping rounded-full border border-cyan-300/30 [animation-duration:2.8s]"/>}
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-base sm:h-9 sm:w-9" aria-hidden="true">⚖️</span><span className="sm:hidden">{isOpen?"Close":"CJ Bot"}</span><span className="hidden sm:inline">{isOpen?"Close CJ Bot":"Chat with CJ Bot"}</span>{!isOpen&&<span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.8)]"/>}
+      <button type="button" aria-expanded={isOpen} aria-label={isOpen?"Close CJ Bot chat":"Chat with CJ Bot"} onClick={()=>setIsOpen(open=>!open)} className="group relative flex h-12 w-12 items-center justify-center rounded-full border border-cyan-200/25 bg-[#071a3d]/80 text-lg shadow-[0_10px_30px_-8px_rgba(0,10,40,.7),0_0_20px_rgba(34,211,238,.18)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-cyan-300/50 hover:shadow-[0_10px_30px_-8px_rgba(0,10,40,.7),0_0_28px_rgba(34,211,238,.35)] focus:outline-none focus:ring-2 focus:ring-cyan-300 sm:h-14 sm:w-14 sm:text-xl">
+        {!isOpen&&<span className="pointer-events-none absolute inset-0 animate-ping rounded-full border border-cyan-300/25 [animation-duration:3s]"/>}
+        <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/15 via-transparent to-blue-600/20"/>
+        <span className="relative" aria-hidden="true">{isOpen?"×":"⚖️"}</span>
+        {!isOpen&&<span className="absolute right-0.5 top-0.5 h-2.5 w-2.5 rounded-full border-2 border-[#071a3d] bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,.8)]"/>}
+        {!isOpen&&<span className="pointer-events-none absolute right-full mr-2.5 hidden whitespace-nowrap rounded-full border border-cyan-200/20 bg-[#071a3d]/85 px-3 py-1.5 text-[0.7rem] font-bold text-cyan-100 opacity-0 shadow-lg backdrop-blur-xl transition group-hover:opacity-100 sm:block">Chat with CJ Bot</span>}
       </button>
     </aside>
   );

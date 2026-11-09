@@ -149,7 +149,7 @@ function FloatingClientReviews() {
         aria-expanded={isOpen}
         aria-controls="floating-client-review-panel"
         onClick={() => setIsOpen((open) => !open)}
-        className="inline-flex max-w-full items-center gap-1 rounded-full border border-blue-200/20 bg-slate-950/90 px-2.5 py-2 text-[0.62rem] font-bold text-blue-50 shadow-xl shadow-black/30 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent sm:gap-2 sm:bg-white/[.075] sm:px-4 sm:py-3 sm:text-xs"
+        className="inline-flex max-w-full items-center gap-1 rounded-full border border-blue-200/20 bg-white/[.075] px-2.5 py-2 text-[0.62rem] font-bold text-blue-50 shadow-xl shadow-black/30 backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-accent sm:gap-2 sm:px-4 sm:py-3 sm:text-xs"
       >
         <span className="text-accent" aria-hidden="true">★★★★★</span>
         <span className="sm:hidden">Reviews</span><span className="hidden sm:inline">Client reviews</span>
@@ -159,7 +159,7 @@ function FloatingClientReviews() {
         <section
           id="floating-client-review-panel"
           aria-live="polite"
-          className="mb-1 max-h-[42dvh] w-[43vw] max-w-[11rem] overflow-y-auto rounded-xl border border-blue-200/20 bg-slate-950/95 p-2.5 text-blue-50 shadow-2xl shadow-black/40 backdrop-blur-xl sm:mb-0 sm:w-full sm:max-w-none sm:max-h-none sm:rounded-2xl sm:bg-white/[.075] sm:p-5"
+          className="mb-1 max-h-[42dvh] w-[43vw] max-w-[11rem] overflow-y-auto rounded-xl border border-blue-200/20 bg-white/[.075] p-2.5 text-blue-50 shadow-2xl shadow-black/40 backdrop-blur-xl sm:mb-0 sm:w-full sm:max-w-none sm:max-h-none sm:rounded-2xl sm:p-5"
         >
           <div className="mb-2 flex items-center justify-between gap-2 sm:mb-3 sm:gap-3">
             <div className="min-w-0">
@@ -172,7 +172,7 @@ function FloatingClientReviews() {
           <div className="mt-2 flex justify-end border-t border-blue-100/15 pt-2 sm:mt-4 sm:pt-3">
             <div className="flex items-center gap-2">
               <button type="button" onClick={showPrevious} aria-label="Previous client review" className="flex h-8 w-8 items-center justify-center rounded-full border border-blue-200/20 bg-white/[.06] text-lg text-cyan-200 transition hover:border-cyan-300/50">‹</button>
-              <button type="button" onClick={showNext} aria-label="Next client review" className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-background text-lg text-accent transition hover:border-accent">›</button>
+              <button type="button" onClick={showNext} aria-label="Next client review" className="flex h-8 w-8 items-center justify-center rounded-full border border-blue-200/20 bg-white/[.06] text-lg text-cyan-200 transition hover:border-accent">›</button>
             </div>
           </div>
         </section>

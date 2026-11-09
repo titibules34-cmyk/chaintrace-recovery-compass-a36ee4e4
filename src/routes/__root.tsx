@@ -303,12 +303,6 @@ function FloatingCJBot() {
     "Enquiry summary:",lead.summary,"","Sent via the CJ Bot website assistant."
   ].join("\n");
   const mailHref="mailto:info@cyberjustice.uk?subject="+encodeURIComponent("Website enquiry — Cyber Justice")+"&body="+encodeURIComponent(mailBody);
-  const resetChat=()=>{
-    setStage("welcome");setLead(emptyCJLead);setMailReady(false);setDraft("");
-    setMessages([{from:"bot",text:"Welcome back. I'm CJ Bot, your website assistant. What would you like help with?"}]);
-    setChoices(["Cryptocurrency scam","Investment fraud","Wallet or account theft","Lost access to digital assets","Transaction tracing","Speak to the recovery team"]);
-  };
-
   const inputCls="w-full rounded-xl border border-cyan-200/15 bg-white/[.05] px-3.5 py-3 text-sm text-blue-50 outline-none transition placeholder:text-blue-200/40 focus:border-cyan-300/50 focus:bg-white/[.08] focus:ring-2 focus:ring-cyan-300/15";
   return (
     <aside className="fixed bottom-2 right-2 z-[70] flex flex-col items-end gap-2 sm:bottom-4 sm:right-4 sm:gap-3">
